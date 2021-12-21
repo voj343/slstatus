@@ -63,7 +63,12 @@ static const char unknown_str[] = "n/a";
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  */
+
 static const struct arg args[] = {
-	/* function format          argument */
-	{ datetime, "%s",           "%F %T" },
+	{ temp, "[TEMP %sC] ", "/sys/class/thermal/thermal_zone0/temp" },
+	{ ram_used, "[%sB/", NULL},
+	{ ram_total, "%sB] ", NULL },
+	{ battery_perc, "[BAT0 %s%] ", "BAT0" },
+	{ battery_perc, "[BAT1 %s%] ", "BAT1" },
+	{ datetime, "[%s]", "%T %F" }
 };
